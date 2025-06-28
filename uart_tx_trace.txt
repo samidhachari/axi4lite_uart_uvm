@@ -1,0 +1,9 @@
+// uart_tx_trace.txt content placeholder
+integer f;
+initial begin
+    f = $fopen("uart_tx_trace.txt", "w");
+    forever begin
+        @(posedge clk);
+        $fwrite(f, "%0d\n", uart_tx);
+    end
+end
